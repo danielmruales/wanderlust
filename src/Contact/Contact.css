@@ -40,5 +40,12 @@
 }
 
 .thanksMsg {
-    display: none;
+    display: flex;
+    justify-content: center;
+    color: white;
+    /* visibility: hidden; */
+}
+
+.empty {
+    visibility: hidden;
 }

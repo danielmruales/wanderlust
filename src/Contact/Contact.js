@@ -8,36 +8,59 @@ class Contact extends Component{
         super()
         this.state = {
 
+            name: "",
+            email: "",
+            phone: "",
+            city: "",
+            state: ""
         }
     }
 
+
+    handleChange = (e) => {
+        this.setState({[e.target.name]:e.target.value})
+ }
+
+
+
     submit = e => {
         e.preventDefault()
+        this.setState({
+            name: "",
+            email: "",
+            phone: "",
+            city: "",
+            state: ""
+        })
     }
 
     render (){
     return (
-        <div className={this.props.toggle ? 'mainContactDiv' : 'thanksMsg'}>
+        <div>
+            
+            <div className='mainContactDiv'>
+                <h1 className='question'> Have Questions or Suggestions? </h1>
+                <p className='directions'> Fill out the form below and one of our awesome team members will reach out! </p>
 
-            <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"></link>
-            <h1 className='question'> Have Questions or Suggestions? </h1>
-            <p className='directions'> Fill out the form below and one of our awesome team members will reach out! </p>
+                <form className='contact' onSubmit={this.submit}>
 
-            <form className='contact' onSubmit={this.submit}>
+                    <input type='text' placeholder='Name' name='name' value={this.state.name} onChange={this.handleChange} required></input>
+                    <input type='email' placeholder='Email' name='email' value={this.state.email} onChange={this.handleChange} required></input>
+                    <input type='number' placeholder='Phone' name='phone' value={this.state.phone} onChange={this.handleChange} required></input>
+                    <input type='text' placeholder='City' name='city' value={this.state.city} onChange={this.handleChange}></input>
 
-                <input type='text' placeholder='Name' required></input>
-                <input type='email' placeholder='Email' required></input>
-                <input type='phone' placeholder='Phone' required></input>
-                <input type='text' placeholder='City'></input>
-
-                <select >
-                    <option value='default'>Select</option>
-                    <option value='utah'> UT </option>
-                    <option value='colorado'> CO </option>
-                    <option value='arizona'> AZ </option>
-                </select>
-                <button>Submit</button>
-            </form>
+                    <select name='state' onChange={this.handleChange} value={this.state.state}>
+                        <option value='default'>Select</option>
+                        <option value='utah'> UT </option>
+                        <option value='colorado'> CO </option>
+                        <option value='arizona'> AZ </option>
+                    </select>
+                    <button onClick={this.props.toggle}>Submit</button>
+                </form>
+            </div>
+            {/* <div className='thanksMsg'>
+                <h1>Thanks for your submisson!</h1>
+            </div> */}
 
         </div>
         );
