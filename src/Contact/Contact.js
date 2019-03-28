@@ -55,7 +55,7 @@ class Contact extends Component{
                         <option value='colorado'> CO </option>
                         <option value='arizona'> AZ </option>
                     </select>
-                    <button onClick={this.props.toggle}>Submit</button>
+                    <button>Submit</button>
                 </form>
             </div>
             {/* <div className='thanksMsg'>
