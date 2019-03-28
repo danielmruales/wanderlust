@@ -24,7 +24,7 @@ submitButton = e => {
     render (){
     return (
         <div className='homeDiv'>
-            <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lato" rel="stylesheet"/>
+            
             <h1 className='welcome'> Welcome To WanderLust </h1>
             <h2 className='subwelcome'>Find adventure, select a city below</h2>
             
