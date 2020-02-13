@@ -31,7 +31,7 @@ submitButton = e => {
                 <select onChange={e => this.props.handleSelectedCity(e.target.value)} className='selector'>
                     <option>Select a City</option>
                     <option value={this.state.saltLake}>Salt Lake City</option>
-                    <option value={this.state.provo}>Provo</option>
+                    <option value={this.state.provo}>This is Test!</option>
                     <option value={this.state.zions}>Zions</option>
                 </select>
               
